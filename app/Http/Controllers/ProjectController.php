@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -61,9 +62,7 @@ class ProjectController extends Controller
      * Update the specified resource in storage.
      */
     public function update(StoreProjectRequest $request, Project $project)
-    {
-        $request->validated();
-        
+    {        
         $project->fill($request->all());
 
         $project->save();
