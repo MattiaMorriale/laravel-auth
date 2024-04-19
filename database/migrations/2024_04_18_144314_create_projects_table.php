@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('description');
-            $table->string('image');
+            $table->text('description');
+            $table->text('image');
             $table->string('technologies');
-            $table->string('link-GitHub');
+            $table->text('link_GitHub');
 
             $table->timestamps();
         });
