@@ -2,8 +2,11 @@
 
 @section('content')
     <div class="container d-flex flex-column align-items-center ">
-        <div class="w-100 py-5">
+        <div class="w-100 py-5 d-flex justify-content-between ">
             <h1 class="py-5 text-primary">I MIE PROGETTI</h1>
+            <div class="col-2">
+                <a href="{{url('admin')}}" class="btn btn-primary my-5 mx-2">Vai alla Home</a>
+            </div>
         </div>
 
         <div class="d-flex flex-wrap gap-4">
