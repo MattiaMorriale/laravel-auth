@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="text-primary py-5">MODIFICA IL TUO PROGETTO</h1>
 
-    <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
+    <form action="{{route('admin.projects.update', $project->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         @method('PUT')
@@ -31,7 +31,12 @@
 
         <div class="mb-3">
             <label for="image" class="form-label text-primary">Immagine</label>
-            <input type="text" class="form-control" id="image" name="image" value='{{old('image') ?? $project->image}}'>
+            <input type="file" class="form-control @error('image') is-invalid @enderror " id="image" name="image" value=''>
+            @error('image')
+            <div class="invalid-feedback ">
+                {{$message}}
+            </div>
+        @enderror
         </div>
 
 

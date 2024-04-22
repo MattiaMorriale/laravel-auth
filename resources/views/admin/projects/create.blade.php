@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="text-primary py-5">AGGIUNGI IL TUO PROGETTO</h1>
 
-    <form action="{{route('admin.projects.store')}}" method="POST">
+    <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
@@ -29,7 +29,13 @@
 
         <div class="mb-3">
             <label for="image" class="form-label text-primary">Immagine</label>
-            <input type="text" class="form-control" id="image" name="image" value='{{old('image')}}'>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" value=''>
+            @error('image')
+                <div class="invalid-feedback ">
+                    {{$message}}
+                </div>
+            @enderror
+
         </div>
 
 

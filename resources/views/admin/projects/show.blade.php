@@ -50,7 +50,7 @@
 
     <div class="row w-100">
         <div class="col-5">
-            <img src="{{$project->image}}" style="width: 450px; height: 500px;" alt="">
+            <img src="{{ asset('storage/' . $project->image)}}" style="width: 450px; height: 500px;" alt="">
         </div>
         <div class="col-7">
             <p><strong class="text-primary">Descrizione :</strong><br> {{$project->description}}</p>
